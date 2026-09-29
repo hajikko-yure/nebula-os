@@ -1,0 +1,33 @@
+# ── Test / tooling artifacts (never commit) ────────────────────
+.verify.js
+.proof.js
+.smoke.js
+.scan.js
+.langcheck.js
+verify-steps.json
+smoke-steps.json
+shot-*.png
+smoke*.png
+*.crdownload
+downloads/
+
+# ── Dependencies / builds ──────────────────────────────────────
+node_modules/
+dist/
+build/
+.cache/
+
+# ── OS & editor noise ──────────────────────────────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.tmp
+*~
+
+# ── Local-only settings that may contain machine data ──────────
+*.local
+.env
+.env.*

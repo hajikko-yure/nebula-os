@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<title>Nebula OS</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7dff'/%3E%3Cstop offset='1' stop-color='%23ff7ad9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 21c4-12 10-12 14 0' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles/theme.css" />
+<link rel="stylesheet" href="styles/boot.css" />
+<link rel="stylesheet" href="styles/desktop.css" />
+<link rel="stylesheet" href="styles/window.css" />
+<link rel="stylesheet" href="styles/shell.css" />
+<link rel="stylesheet" href="styles/apps.css" />
+</head>
+<body>
+
+<!-- ══════════ WALLPAPER ══════════ -->
+<div id="wallpaper" class="wallpaper">
+  <div class="wp-canvas-wrap" data-renderer="aurora"></div>
+  <div class="wp-canvas-wrap" data-renderer="nebula"></div>
+  <div class="wp-gradient" data-wallpaper="mesh"></div>
+  <div class="wp-gradient" data-wallpaper="dawn"></div>
+  <div class="wp-gradient" data-wallpaper="graphite"></div>
+  <div class="wp-grid" data-wallpaper="grid"></div>
+  <div class="wp-grain"></div>
+  <div class="wp-vignette"></div>
+</div>
+
+<!-- ══════════ DESKTOP ══════════ -->
+<main id="desktop" class="desktop" aria-label="Desktop">
+  <div id="iconLayer" class="icon-layer" role="list" aria-label="Desktop icons"></div>
+  <div id="marquee" class="marquee" hidden></div>
+</main>
+
+<!-- Snap / snap-layout assist -->
+<div id="snapHint" class="snap-hint" hidden></div>
+<div id="snapFlyout" class="snap-flyout" hidden></div>
+
+<!-- ══════════ WINDOW LAYER ══════════ -->
+<div id="windowLayer" class="window-layer" aria-live="polite"></div>
+
+<!-- ══════════ SWITCHER (Alt+Tab) ══════════ -->
+<div id="switcher" class="switcher" hidden>
+  <div class="switcher-inner" id="switcherInner"></div>
+</div>
+
+<!-- ══════════ TOP-RIGHT STATUS CLUSTER ══════════ -->
+<div class="status-cluster" id="statusCluster">
+  <button class="status-pill" id="statusWifi" title="ネットワーク">
+    <span class="status-icon" data-icon="wifi"></span>
+  </button>
+  <button class="status-pill" id="statusVolume" title="音量">
+    <span class="status-icon" data-icon="volume"></span>
+    <span class="status-level" id="volumeLevel"></span>
+  </button>
+  <button class="status-pill" id="statusBattery" title="バッテリー">
+    <span class="battery"><span class="battery-fill" id="batteryFill"></span></span>
+    <span class="status-text" id="batteryText">—</span>
+  </button>
+  <button class="status-clock" id="statusClock" title="カレンダー">
+    <span class="clock-time" id="clockTime">--:--</span>
+    <span class="clock-date" id="clockDate">----/--/--</span>
+  </button>
+  <button class="status-pill status-showdesktop" id="showDesktop" title="デスクトップを表示"></button>
+</div>
+
+<!-- ══════════ DOCK ══════════ -->
+<nav class="dock" id="dock" aria-label="Dock">
+  <div class="dock-inner" id="dockInner"></div>
+</nav>
+
+<!-- ══════════ START MENU ══════════ -->
+<section class="startmenu" id="startMenu" hidden aria-label="スタートメニュー">
+  <div class="start-scrim" data-close-start></div>
+  <div class="start-panel" id="startPanel">
+    <header class="start-head">
+      <div class="start-search">
+        <span class="field-icon" data-icon="search"></span>
+        <input id="startSearch" type="text" placeholder="アプリとファイルを検索" autocomplete="off" spellcheck="false" />
+        <button class="field-clear" id="startSearchClear" hidden aria-label="クリア">×</button>
+      </div>
+      <div class="start-greeting">
+        <div class="avatar" id="startAvatar">N</div>
+        <div class="greet-text">
+          <strong id="greetName">ユーザー</strong>
+          <span id="greetSub">Nebula OS にようこそ</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="start-tabs" role="tablist">
+      <button class="start-tab is-active" data-tab="pinned" role="tab">ピン留め</button>
+      <button class="start-tab" data-tab="all" role="tab">すべてのアプリ</button>
+      <button class="start-tab" data-tab="files" role="tab">ファイル</button>
+    </nav>
+
+    <div class="start-body">
+      <section class="start-panel-page is-active" data-page="pinned">
+        <div class="start-section-title">
+          <span>ピン留め</span>
+          <div class="start-section-actions">
+            <button class="ghost-btn" id="pinRandom" title="ランダムに並べ替え">シャッフル</button>
+          </div>
+        </div>
+        <div class="app-grid" id="pinnedGrid"></div>
+        <div class="start-section-title"><span>最近使った項目</span></div>
+        <div class="recent-list" id="recentList"></div>
+      </section>
+
+      <section class="start-panel-page" data-page="all">
+        <div class="app-grid app-grid--dense" id="allAppsGrid"></div>
+      </section>
+
+      <section class="start-panel-page" data-page="files">
+        <div class="file-search-list" id="startFilesList"></div>
+      </section>
+    </div>
+
+    <footer class="start-foot">
+      <button class="foot-user" id="footUser">
+        <span class="avatar avatar--sm" id="footAvatar">N</span>
+        <span id="footName">ユーザー</span>
+      </button>
+      <div class="foot-actions">
+        <button class="ghost-btn icon-only" id="btnBackup" title="バックアップ" aria-label="バックアップ">
+          <span data-icon="download"></span>
+        </button>
+        <button class="ghost-btn" id="btnLock" title="ロック">ロック</button>
+        <button class="ghost-btn danger" id="btnRestart" title="再起動">再起動</button>
+        <button class="power-btn" id="btnPower" title="電源" aria-haspopup="menu">
+          <span data-icon="power"></span>
+        </button>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<!-- ══════════ NOTIFICATIONS ══════════ -->
+<div class="notif-layer" id="notifLayer" aria-live="polite"></div>
+
+<!-- ══════════ CONTEXT MENU ══════════ -->
+<div class="ctxmenu" id="ctxMenu" hidden role="menu"></div>
+
+<!-- ══════════ LOCK / BOOT ══════════ -->
+<div class="lockscreen" id="lockScreen">
+  <canvas class="lock-wallpaper" id="lockCanvas"></canvas>
+  <div class="lock-overlay">
+    <div class="lock-clock">
+      <div class="lock-time" id="lockTime">--:--</div>
+      <div class="lock-date" id="lockDate"></div>
+    </div>
+    <button class="lock-card" id="lockCard">
+      <span class="avatar avatar--lg" id="lockAvatar">N</span>
+      <span class="lock-name" id="lockName">ユーザー</span>
+      <span class="lock-hint">クリックしてロック解除</span>
+    </button>
+    <div class="lock-notifs" id="lockNotifs"></div>
+  </div>
+</div>
+
+<div class="boot" id="bootScreen">
+  <div class="boot-inner">
+    <div class="boot-logo">
+      <svg viewBox="0 0 120 120" width="104" height="104" aria-hidden="true">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8b7dff"/><stop offset=".55" stop-color="#ff7ad9"/><stop offset="1" stop-color="#5ad6ff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="46" fill="none" stroke="url(#bg1)" stroke-width="4" stroke-linecap="round"
+                stroke-dasharray="200 90" class="boot-ring"/>
+        <path d="M36 74c14-38 34-38 48 0" fill="none" stroke="url(#bg1)" stroke-width="6" stroke-linecap="round" class="boot-wave"/>
+        <circle cx="60" cy="60" r="7" fill="url(#bg1)" class="boot-core"/>
+      </svg>
+    </div>
+    <div class="boot-name">Nebula<span>OS</span></div>
+    <div class="boot-bar"><i id="bootFill"></i></div>
+    <div class="boot-status" id="bootStatus"> powering on…</div>
+  </div>
+</div>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script src="scripts/core/util.js"></script>
+<script src="scripts/core/icons.js"></script>
+<script src="scripts/core/store.js"></script>
+<script src="scripts/core/vfs.js"></script>
+<script src="scripts/core/apps.js"></script>
+<script src="scripts/core/notify.js"></script>
+<script src="scripts/core/contextmenu.js"></script>
+<script src="scripts/core/wm.js"></script>
+<script src="scripts/core/wallpaper.js"></script>
+<script src="scripts/core/desktop.js"></script>
+<script src="scripts/core/taskbar.js"></script>
+<script src="scripts/core/startmenu.js"></script>
+<script src="scripts/core/backup.js"></script>
+<script src="scripts/apps/files.js"></script>
+<script src="scripts/apps/terminal.js"></script>
+<script src="scripts/apps/notepad.js"></script>
+<script src="scripts/apps/settings.js"></script>
+<script src="scripts/apps/calculator.js"></script>
+<script src="scripts/apps/music.js"></script>
+<script src="scripts/apps/photos.js"></script>
+<script src="scripts/apps/browser.js"></script>
+<script src="scripts/apps/weather.js"></script>
+<script src="scripts/apps/minesweeper.js"></script>
+<script src="scripts/apps/clock.js"></script>
+<script src="scripts/apps/mail.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
