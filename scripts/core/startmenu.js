@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — launcher / start menu
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — launcher / start menu */
 (function (OS) {
   'use strict';
   const { el, $, $$, bus, debounce } = OS.util;

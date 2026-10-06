@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — virtual file system (persisted in localStorage)
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — virtual file system (persisted in localStorage) */
 (function (OS) {
   'use strict';
   const { bus, uid } = OS.util;
@@ -50,8 +48,8 @@ Your files live in this browser. Nothing is uploaded anywhere.
 export const app = {
   id: 'hello',
   title: 'Hello',
-  icon: 'sparkles',
-  accent: ['#8b7dff', '#ff7ad9'],
+  icon: 'code',
+  accent: ['#6366f1', '#38bdf8'],
   width: 420,
   height: 300,
   mount(root, win) {

@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — dock + status cluster
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — dock + status cluster */
 (function (OS) {
   'use strict';
   const { el, $, $$, bus, pad2, clamp } = OS.util;

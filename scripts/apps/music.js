@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Music — generative synth player (WebAudio)
-   ═══════════════════════════════════════════════════════════ */
+/* App: Music — generative synth player (WebAudio) */
 (function (OS) {
   'use strict';
   const { el, $, $$, pad2 } = OS.util;

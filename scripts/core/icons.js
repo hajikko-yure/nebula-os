@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — icon registry (inline SVG + CSS mask)
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — icon registry (inline SVG + CSS mask) */
 (function (OS) {
   'use strict';
 

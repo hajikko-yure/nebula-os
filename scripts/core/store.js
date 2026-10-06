@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — settings store
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — settings store */
 (function (OS) {
   'use strict';
   const { bus } = OS.util;
@@ -8,9 +6,9 @@
 
   const DEFAULTS = {
     theme: 'dark',            // dark | light
-    accent: '#8b7dff',
-    accent2: '#ff7ad9',
-    accent3: '#5ad6ff',
+    accent: '#6366f1',
+    accent2: '#38bdf8',
+    accent3: '#2dd4bf',
     wallpaper: 'aurora',
     blur: 34,                 // px
     opacity: 62,              // %

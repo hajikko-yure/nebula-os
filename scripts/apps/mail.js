@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Mail
-   ═══════════════════════════════════════════════════════════ */
+/* App: Mail */
 (function (OS) {
   'use strict';
   const { el, $, dtf } = OS.util;
@@ -12,7 +10,7 @@
 
   const MAILS = [
     {
-      from: 'Aria Nakamura', addr: 'aria@nebula.dev', color: ['#8b7dff', '#5ad6ff'],
+      from: 'Aria Nakamura', addr: 'aria@nebula.dev', color: ['#6366f1', '#38bdf8'],
       subj: 'デザインレビューのフィードバック', at: now - 22 * MIN, unread: true,
       body: `こんにちは。
 
@@ -24,7 +22,7 @@
   3. 最大化ボタンのホバーで配置候補を表示する案
 
 1 と 3 はこのビルドで実装済みです。スクリーンショットを添付します。
-2 だけ来判断が分かれるので、意見をもらえると助かります。
+2 だけ判断が分かれるので、意見をもらえると助かります。
 
 ——— Aria`
     },
@@ -39,18 +37,18 @@
   ・8 種類の壁紙（うち 2 つはリアルタイム描画）
   ・テーマ・アクセント・ガラス効果の即時反映
 
-先行ビルド。试してくださった全員に感謝します。`
+先行ビルドを試してくれた方々に感謝します。`
     },
     {
       from: 'Kaito', addr: 'kaito@studio.jp', color: ['#fbbf24', '#f97316'],
       subj: 'シンセについて', at: now - 5 * HOUR, unread: false,
-      body: `清水さん、お疲れさまです。
+      body: `hajikkoyureさん、お疲れさまです。
 
-前回入れたシンセ、abilidad 的可能性が repart。
+前回入れたシンセ、かなり表現の幅が広がりました。
 
   ・コード進行を 4 パターンから選択できる
-  ・ rever を本物の convolution に差し替えた
-  ・ スペクトラム表示を追加
+  ・reverb を convolution に差し替えた
+  ・スペクトラム表示を追加
 
 次のリリースで filter を有効にする予定なので、
 数値の意見をもらえれば反映します。
@@ -59,7 +57,7 @@
     },
     {
       from: 'System', addr: 'system@nebula.local', color: ['#64748b', '#94a3b8'],
-      subj: 'ストレージの最適化が完了しました', at: now - DAY, unread: false,
+      subj: 'ストレージのインデックス更新完了', at: now - DAY, unread: false,
       body: `索引の再構築が完了しました。
 
 使用容量: 12.4 KB / 5.00 GB
@@ -192,9 +190,9 @@
       const s = await notify.prompt('新規メール', '件名を入力', '無題');
       if (!s) return;
       MAILS.unshift({
-        from: OS.session.user(), addr: 'me@nebula.local', color: ['#8b7dff', '#ff7ad9'],
+        from: OS.session.user(), addr: 'me@nebula.local', color: ['#6366f1', '#38bdf8'],
         subj: s, at: Date.now(), unread: true,
-        body: '（このデモでは作成のみ可能です。本文の編集は読み取り専用です。）'
+        body: '（この画面では新規作成のみ対応しています。受信メール本文は読み取り専用です。）'
       });
       sel = 0; render();
     });

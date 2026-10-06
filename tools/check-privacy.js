@@ -1,18 +1,5 @@
 #!/usr/bin/env node
-/* ══════════════════════════════════════════════════════════════
-   check-privacy — guard against publishing local machine data.
-
-   Scans every file git is about to track for identifiers that
-   belong to the machine the code was written on: the local user
-   name, absolute home paths, MAC / WAN / LAN addresses, and
-   private network ranges.
-
-   Run before every push:
-       node tools/check-privacy.js
-       git add -A && node tools/check-privacy.js && git commit
-
-   Exit code 0 = clean, 1 = found something.
-   ══════════════════════════════════════════════════════════════ */
+/* Check privacy and prevent local identifiers from leaking */
 'use strict';
 
 const { execFileSync } = require('child_process');

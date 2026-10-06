@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — toasts, modals, dialogs
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — toasts, modals, dialogs */
 (function (OS) {
   'use strict';
   const { el, $, $$, dtf, uid } = OS.util;

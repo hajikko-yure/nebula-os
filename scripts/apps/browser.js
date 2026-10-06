@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Browser — offline mock web
-   ═══════════════════════════════════════════════════════════ */
+/* App: Browser — offline mock web */
 (function (OS) {
   'use strict';
   const { el } = OS.util;
@@ -75,9 +73,10 @@
     const s = el('div', { class: 'bpage' });
     s.append(el('div', { class: 'bpage-hero' },
       el('h1', { text: 'Nebula OS' }),
-      el('p', { text: 'Version 1.0.0 "Aurora" — ブラウザで動く疑似 OS。' })));
+      el('p', { text: 'Version 1.0.0 "Aurora" — ブラウザで動くデスクトップ環境。' })));
     s.append(el('div', { class: 'bpage-sec' }, el('h2', { text: 'システム' }),
       el('div', { class: 'bpage-card' },
+        el('div', {}, el('b', { text: '作者' }), el('p', { text: 'hajikkoyure' })),
         el('div', {}, el('b', { text: 'テーマ' }), el('p', { text: store.get('theme') })),
         el('div', {}, el('b', { text: 'アクセント' }), el('p', { text: store.get('accent') })),
         el('div', {}, el('b', { text: 'ディスプレイ' }), el('p', { text: `${screen.width}×${screen.height}` })))));

@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Clock — world clock, stopwatch, timer
-   ═══════════════════════════════════════════════════════════ */
+/* App: Clock — world clock, stopwatch, timer */
 (function (OS) {
   'use strict';
   const { el, $, pad2, clamp } = OS.util;

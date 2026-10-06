@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — wallpaper engine
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — wallpaper engine */
 (function (OS) {
   'use strict';
   const { $, $$, bus, lerp, clamp } = OS.util;
@@ -55,36 +53,14 @@
 
     ctx.globalCompositeOperation = 'screen';
 
-    // 6 soft light bodies on Lissajous paths
-    const cols = [a1, a2, a3, a1, a2, a3];
-    for (let i = 0; i < 6; i++) {
-      const p = i / 6;
-      const sx = 0.5 + 0.44 * Math.sin(t * (0.06 + p * 0.05) + i * 1.7);
-      const sy = 0.5 + 0.40 * Math.sin(t * (0.045 + p * 0.04) + i * 2.3);
-      const x = sx * w, y = sy * h;
-      const r = (0.30 + 0.20 * Math.sin(t * 0.09 + i)) * Math.min(w, h) * 1.15;
-      const rg = ctx.createRadialGradient(x, y, 0, x, y, r);
-      const col = cols[i % cols.length];
-      rg.addColorStop(0, rgba(col, 0.42));
-      rg.addColorStop(0.42, rgba(col, 0.16));
-      rg.addColorStop(1, rgba(col, 0));
-      ctx.fillStyle = rg;
-      ctx.fillRect(x - r, y - r, r * 2, r * 2);
-    }
-
-    // 14 small hot cores for texture and depth
-    for (let i = 0; i < 14; i++) {
-      const a = t * (0.07 + i * 0.006) + i * 1.31;
-      const x = (0.5 + 0.40 * Math.cos(a * 1.7 + i)) * w;
-      const y = (0.5 + 0.36 * Math.sin(a * 1.3 + i * 2)) * h;
-      const r = Math.min(w, h) * (0.035 + 0.028 * Math.sin(t * 0.21 + i));
-      const col = cols[i % cols.length];
-      const rg = ctx.createRadialGradient(x, y, 0, x, y, r);
-      rg.addColorStop(0, rgba(col, 0.34));
-      rg.addColorStop(1, rgba(col, 0));
-      ctx.fillStyle = rg;
-      ctx.fillRect(x - r, y - r, r * 2, r * 2);
-    }
+    // Subtle background ambient illumination
+    const cols = [a1, a2, a3];
+    const amb = ctx.createRadialGradient(w * 0.5, h * 0.45, 0, w * 0.5, h * 0.45, Math.max(w, h) * 0.65);
+    amb.addColorStop(0, rgba(cols[0], 0.12));
+    amb.addColorStop(0.5, rgba(cols[1], 0.05));
+    amb.addColorStop(1, 'transparent');
+    ctx.fillStyle = amb;
+    ctx.fillRect(0, 0, w, h);
 
     // aurora curtains
     ctx.globalCompositeOperation = 'screen';

@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Notepad
-   ═══════════════════════════════════════════════════════════ */
+/* App: Notepad */
 (function (OS) {
   'use strict';
   const { el, $, esc, debounce, dtf, bytes } = OS.util;

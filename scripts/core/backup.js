@@ -1,10 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — system backup / restore
-
-   Produces a single JSON file containing every piece of persistent
-   state (settings, the whole virtual filesystem, and UI preferences)
-   and can restore it, with validation and a dry-run summary.
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — system backup and restore */
 (function (OS) {
   'use strict';
   const { el, $, download, bytes } = OS.util;

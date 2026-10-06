@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Photos — procedurally generated artwork
-   ═══════════════════════════════════════════════════════════ */
+/* App: Photos — procedurally generated artwork */
 (function (OS) {
   'use strict';
   const { el, $, $$, dtf } = OS.util;

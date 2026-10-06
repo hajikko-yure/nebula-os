@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Terminal
-   ═══════════════════════════════════════════════════════════ */
+/* App: Terminal */
 (function (OS) {
   'use strict';
   const { el, $, esc, dtf, bytes, pad2 } = OS.util;
@@ -260,8 +258,9 @@
       const info = el('div', { class: 'info' });
       const rows = [
         `<b>${esc(shellUser())}</b>@<b>nebula</b>`,
-        `<b style="color:#ff7ad9">─'.repeat(22)`,
-        `<b>OS</b>      Nebula OS 1.0 (browser)`,
+        `<b style="color:#38bdf8">${'─'.repeat(24)}</b>`,
+        `<b>OS</b>      Nebula OS 1.0.0 (browser)`,
+        `<b>Author</b>  hajikkoyure`,
         `<b>Host</b>    ${esc(navigator.platform || 'web')}`,
         `<b>Kernel</b>  js ${esc(navigator.userAgent.match(/Chrome\/([\d.]+)/)?.[1] || '—')}`,
         `<b>Shell</b>   nebula-sh 1.0.0`,

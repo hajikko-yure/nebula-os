@@ -1,4 +1,3 @@
-# ── Test / tooling artifacts (never commit) ────────────────────
 .verify.js
 .proof.js
 .smoke.js
@@ -11,13 +10,11 @@ smoke*.png
 *.crdownload
 downloads/
 
-# ── Dependencies / builds ──────────────────────────────────────
 node_modules/
 dist/
 build/
 .cache/
 
-# ── OS & editor noise ──────────────────────────────────────────
 Thumbs.db
 desktop.ini
 .DS_Store
@@ -27,7 +24,10 @@ desktop.ini
 *.tmp
 *~
 
-# ── Local-only settings that may contain machine data ──────────
 *.local
 .env
 .env.*
+
+.agents
+.kilo
+.tmp

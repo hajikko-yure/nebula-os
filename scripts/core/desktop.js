@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — desktop surface (icons, selection, context menu)
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — desktop surface (icons, selection, context menu) */
 (function (OS) {
   'use strict';
   const { el, $, $$, bus, drag, clamp } = OS.util;

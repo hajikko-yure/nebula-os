@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Files
-   ═══════════════════════════════════════════════════════════ */
+/* App: Files */
 .files { --app-bg: transparent; }
 .files .side {
   width: 194px; flex: none;
@@ -65,9 +63,7 @@
 .frow-head:hover { background: none; }
 .rename-input { width: 100%; background: var(--sunken); border: 1px solid var(--accent); border-radius: 5px; padding: 2px 6px; font-size: 12.5px; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Terminal
-   ═══════════════════════════════════════════════════════════ */
+/* App: Terminal */
 .term {
   --app-bg: #06070d;
   height: 100%; display: flex; flex-direction: column;
@@ -97,9 +93,7 @@ html[data-theme="light"] .term { --app-bg: #14161f; }
 .term-neofetch .swatch-row { display: flex; gap: 4px; margin-top: 8px; }
 .term-neofetch .swatch { width: 18px; height: 12px; border-radius: 2px; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Notepad
-   ═══════════════════════════════════════════════════════════ */
+/* App: Notepad */
 .note { --app-bg: var(--glass); }
 .note-body { flex: 1; display: flex; min-height: 0; }
 .note-lines {
@@ -121,9 +115,7 @@ html[data-theme="light"] .term { --app-bg: #14161f; }
 }
 .note-area::placeholder { color: var(--txt-3); }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Settings
-   ═══════════════════════════════════════════════════════════ */
+/* App: Settings */
 .set { --app-bg: transparent; }
 .set .side { width: 172px; flex: none; padding: 10px 8px; border-right: 1px solid var(--stroke); overflow: auto; }
 .set .main { flex: 1; overflow: auto; padding: 26px 30px 40px; max-width: 780px; }
@@ -197,9 +189,7 @@ html[data-theme="light"] .term { --app-bg: #14161f; }
 .kv dt { color: var(--txt-2); }
 .kv dd { font-weight: 550; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Calculator
-   ═══════════════════════════════════════════════════════════ */
+/* App: Calculator */
 .calc { --app-bg: transparent; }
 .calc-out {
   flex: none; padding: 22px 20px 18px; text-align: right;
@@ -228,9 +218,7 @@ html[data-theme="light"] .term { --app-bg: #14161f; }
 .ckey.wide { grid-column: span 2; }
 .calc-history { font-size: 11px; color: var(--txt-3); text-align: right; padding: 0 20px 8px; min-height: 16px; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Music
-   ═══════════════════════════════════════════════════════════ */
+/* App: Music */
 .music { --app-bg: transparent; }
 .music .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .music-art {
@@ -279,9 +267,7 @@ html[data-theme="light"] .term { --app-bg: #14161f; }
 .mtrack .eqbars i:nth-child(3) { animation-delay: .36s; }
 @keyframes eqb { 0%,100% { height: 22%; } 50% { height: 100%; } }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Photos
-   ═══════════════════════════════════════════════════════════ */
+/* App: Photos */
 .photos { --app-bg: transparent; }
 .photo-grid { flex: 1; min-width: 0; overflow: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; padding: 14px; align-content: start; }
 .pitem { aspect-ratio: 4/3; border-radius: var(--r-sm); overflow: hidden; position: relative; border: 1px solid var(--stroke); transition: transform var(--t-med) var(--ease-out), box-shadow var(--t-med); }
@@ -299,9 +285,7 @@ html[data-theme="light"] .term { --app-bg: #14161f; }
 .photo-view .pv-bar { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--r-pill); background: rgba(20,22,32,.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.12); color: #fff; }
 .photo-view .pv-title { font-size: 13px; font-weight: 550; margin: 0 8px; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Browser
-   ═══════════════════════════════════════════════════════════ */
+/* App: Browser */
 .brow { --app-bg: transparent; }
 .brow-url { flex: 1; min-width: 0; height: 30px; border-radius: var(--r-pill); background: var(--sunken); border: 1px solid var(--stroke); display: flex; align-items: center; gap: 8px; padding: 0 12px; }
 .brow-url:focus-within { border-color: var(--accent-line); box-shadow: 0 0 0 3px var(--accent-soft); }
@@ -344,9 +328,7 @@ html[data-theme="dark"] .brow-view { background: #0d0f18; color: #e8ecf8; }
 .bpage-tiles button { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: #fff; box-shadow: var(--shadow-1); transition: transform var(--t-fast) var(--ease-spring); }
 .bpage-tiles button:hover { transform: translateY(-3px) scale(1.08); }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Weather
-   ═══════════════════════════════════════════════════════════ */
+/* App: Weather */
 .wx { --app-bg: transparent; padding: 0; }
 .wx-hero { padding: 26px 26px 20px; display: flex; align-items: flex-start; gap: 18px; }
 .wx-temp { font-size: 62px; font-weight: 250; letter-spacing: -.05em; line-height: .95; }
@@ -372,9 +354,7 @@ html[data-theme="dark"] .brow-view { background: #0d0f18; color: #e8ecf8; }
 .wx-stat small { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em; color: var(--txt-3); font-weight: 700; }
 .wx-stat b { display: block; font-size: 17px; font-weight: 600; margin-top: 4px; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Minesweeper
-   ═══════════════════════════════════════════════════════════ */
+/* App: Minesweeper */
 .mine { --app-bg: transparent; }
 .mine-head { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--stroke); }
 .mine-counter { display: flex; align-items: center; gap: 6px; font-family: "JetBrains Mono", Consolas, monospace; font-size: 17px; font-weight: 700; color: #ff5f6d; font-variant-numeric: tabular-nums; background: var(--sunken); padding: 3px 10px; border-radius: 8px; }
@@ -403,9 +383,7 @@ html[data-theme="dark"] .brow-view { background: #0d0f18; color: #e8ecf8; }
 .dif-btn { height: 24px; min-width: 26px; padding: 0 7px; border-radius: 6px; font-size: 12px; font-weight: 650; color: var(--txt-2); background: var(--sunken); transition: all var(--t-fast); }
 .dif-btn.is-on { background: var(--accent); color: #fff; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Clock / Timers
-   ═══════════════════════════════════════════════════════════ */
+/* App: Clock / Timers */
 .clk { --app-bg: transparent; }
 .clk-face { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; position: relative; min-height: 0; }
 .clk-time { font-size: clamp(44px, 9vw, 76px); font-weight: 250; letter-spacing: -.045em; font-variant-numeric: tabular-nums; line-height: 1; }
@@ -421,9 +399,7 @@ html[data-theme="dark"] .brow-view { background: #0d0f18; color: #e8ecf8; }
 .timer-chip:hover { background: var(--active); }
 .timer-chip.is-on { background: var(--accent); color: #fff; border-color: transparent; }
 
-/* ═══════════════════════════════════════════════════════════
-   App: Mail
-   ═══════════════════════════════════════════════════════════ */
+/* App: Mail */
 .mail { --app-bg: transparent; }
 .mail .list { width: 288px; flex: none; border-right: 1px solid var(--stroke); overflow: auto; padding: 6px; }
 .mail .reader { flex: 1; min-width: 0; display: flex; flex-direction: column; }
@@ -443,9 +419,7 @@ html[data-theme="dark"] .brow-view { background: #0d0f18; color: #e8ecf8; }
 .mread-body { padding: 20px 24px 30px; font-size: 13.5px; line-height: 1.75; color: var(--txt-1); user-select: text; overflow: auto; }
 .mread-body p { margin-bottom: 13px; }
 
-/* ═══════════════════════════════════════════════════════════
-   Dialogs (prompt/confirm/alert)
-   ═══════════════════════════════════════════════════════════ */
+/* Dialogs (prompt/confirm/alert) */
 .modal-layer { position: fixed; inset: 0; z-index: 960; display: grid; place-items: center; background: var(--scrim); backdrop-filter: blur(10px); animation: fadeIn 160ms var(--ease-out); }
 .modal {
   width: min(420px, calc(100vw - 32px));
@@ -463,9 +437,7 @@ html[data-theme="dark"] .brow-view { background: #0d0f18; color: #e8ecf8; }
 .modal input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .modal-acts { display: flex; justify-content: flex-end; gap: 8px; }
 
-/* ═══════════════════════════════════════════════════════════
-   Window content helpers used by several apps
-   ═══════════════════════════════════════════════════════════ */
+/* Window content helpers used by several apps */
 .pill-tabs { display: flex; gap: 3px; }
 .zoomable { cursor: zoom-in; }
 .drop-hint { outline: 2px dashed var(--accent); outline-offset: -6px; }

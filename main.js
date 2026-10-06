@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — boot, theme, session, app registry
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — boot, theme, session, app registry */
 (function (OS) {
   'use strict';
   const { $, $$, el, bus, sleep, pad2, debounce } = OS.util;

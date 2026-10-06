@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — window manager
-   drag · resize · snap · focus · minimize · maximize · alt-tab
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — window manager */
 (function (OS) {
   'use strict';
   const { el, $, clamp, drag, bus, raf } = OS.util;

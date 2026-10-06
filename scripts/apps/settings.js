@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Settings
-   ═══════════════════════════════════════════════════════════ */
+/* App: Settings */
 (function (OS) {
   'use strict';
   const { el, $, $$, esc } = OS.util;
@@ -272,12 +270,13 @@
 
     function about() {
       const hero = el('div', { class: 'set-card' }, el('div', { class: 'about-hero' },
-        el('div', { class: 'logo', dataset: { icon: 'sparkles' } }),
+        el('div', { class: 'logo', dataset: { icon: 'window' } }),
         el('div', {},
           el('h2', { text: 'Nebula OS' }),
-          el('p', { text: 'Version 1.0.0 "Aurora" — ブラウザで動く、完全なデスクトップ環境。' }))));
+          el('p', { text: 'Version 1.0.0 "Aurora" — ブラウザで動くデスクトップ環境。' }))));
       const info = el('dl', { class: 'kv' },
-        el('dt', { text: 'ビルド' }), el('dd', { text: '1.0.0 (stable)' }),
+        el('dt', { text: 'バージョン' }), el('dd', { text: '1.0.0 (stable)' }),
+        el('dt', { text: '作者' }), el('dd', { text: 'hajikkoyure' }),
         el('dt', { text: 'カーネル' }), el('dd', { text: 'JS ' + (navigator.userAgent.match(/Chrome\/([\d.]+)/)?.[1] || '—') }),
         el('dt', { text: 'ウィンドウ管理' }), el('dd', { text: 'NebulaWM (snap + zones)' }),
         el('dt', { text: 'シェル' }), el('dd', { text: 'Nebula Shell 1.0.0' }),
@@ -290,6 +289,7 @@
       main.append(el('section', { class: 'set-group' }, hero));
       main.append(el('section', { class: 'set-group' }, el('div', { class: 'set-card' }, el('div', { class: 'set-row' }, info))));
       main.append(group('credits',
+        row('開発者', '設計・実装', el('span', { class: 'tiny dim', text: 'hajikkoyure' })),
         row('デザイン', 'すべてブラウザ標準 API のみで描画', el('span', { class: 'tiny dim', text: 'HTML · CSS · Canvas · WebAudio' })),
         row('データ', 'すべてこのブラウザの localStorage に保存されます', el('span', { class: 'tiny dim', text: '外部送信なし' }))
       ));

@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   App: Weather (simulated forecast)
-   ═══════════════════════════════════════════════════════════ */
+/* App: Weather (simulated forecast) */
 (function (OS) {
   'use strict';
   const { el, $, pad2 } = OS.util;

@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Wallpaper layers
-   ═══════════════════════════════════════════════════════════ */
+/* Wallpaper layers */
 .wallpaper {
   position: fixed; inset: 0;
   z-index: 0;
@@ -122,9 +120,7 @@ html[data-theme="light"] .wp-vignette {
     radial-gradient(140% 110% at 50% 110%, rgba(40,44,80,.14), transparent 62%);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   Desktop & icons
-   ═══════════════════════════════════════════════════════════ */
+/* Desktop & icons */
 .desktop {
   position: fixed; inset: 0;
   z-index: 1;
@@ -202,9 +198,7 @@ html[data-theme="light"] .dicon-label { color: #12141f; text-shadow: 0 1px 2px r
   z-index: 60;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   Snap hint / flyout
-   ═══════════════════════════════════════════════════════════ */
+/* Snap hint / flyout */
 .snap-hint {
   position: fixed; z-index: 245;
   border-radius: var(--r-lg);
@@ -246,9 +240,7 @@ html[data-theme="light"] .dicon-label { color: #12141f; text-shadow: 0 1px 2px r
 
 @keyframes popIn { from { opacity: 0; transform: scale(.9) translateY(8px); } to { opacity: 1; transform: none; } }
 
-/* ═══════════════════════════════════════════════════════════
-   Alt-Tab switcher
-   ═══════════════════════════════════════════════════════════ */
+/* Alt-Tab switcher */
 .switcher {
   position: fixed; inset: 0; z-index: 900;
   display: grid; place-items: center;

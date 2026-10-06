@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — context menu
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — context menu */
 (function (OS) {
   'use strict';
   const { el, $ } = OS.util;

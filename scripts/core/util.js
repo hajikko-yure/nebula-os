@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — core utilities
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — core utilities */
 window.OS = window.OS || {};
 
 (function (OS) {

@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   Nebula OS — application registry
-   ═══════════════════════════════════════════════════════════ */
+/* Nebula OS — application registry */
 (function (OS) {
   'use strict';
   const { bus } = OS.util;
